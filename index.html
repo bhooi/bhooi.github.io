@@ -1,7 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Fractionalized World</title>
+	<script src="d3.v2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/orbit.css">
+	<link rel="stylesheet" type="text/css" href="./css/bubbles.css">
+	<link href='http://fonts.googleapis.com/css?family=Nunito|Oswald' rel='stylesheet' type='text/css'>
+	<style>
+
+	.country_label, .heatmap_label, .heatmap_axis {
+		font-family: 'Verdana', sans-serif;
+		fill: #eee;
+	}
+
+	* {
+	 scrollbar-face-color:#222; scrollbar-track-color:#222; scrollbar-arrow-color:#eee; scrollbar-shadow-color:#222; scrollbar-dark-shadow-color:#222; scrollbar-3dlight-color:#222; scrollbar-highlight-color:#222
+	}
+
+	::-webkit-scrollbar{width:9px;height:9px;}
+	::-webkit-scrollbar-button:start:decrement,#doc ::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
+	::-webkit-scrollbar-track-piece{background-color:#222;-webkit-border-radius:0;-webkit-border-bottom-right-radius:5px;-webkit-border-bottom-left-radius:5px;}
+	::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:5px;}
+	::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:5px;}
+
+
+	body {
+		background: #222;
+		padding: 0px;
+		margin: 0px;		
+	}
+
+	h2 {
+		font-weight: normal;
+		font-size: 16pt;
+		color: #fff;
+	}
+
+	.heatmap_axis path,
+	.heatmap_axis line {
+	 fill: none;
+	 stroke: #eee;
+	 shape-rendering: crispEdges;
+	}
+	.country_button {
+		fill: #222;
+	}
+	.country_container text {
+		font-size: 10pt;
+	}
+
+	.country_container {
+		cursor: pointer;
+	} 
+
+	.country_container:hover .country_button {
+		fill: #333
+	}
+
+	.country_button.selected,
+	.country_container:hover .country_button.selected {
+		fill: #444;
+	}
+
+	.heatmap_button {
+		fill: #222;
+	}
+
+	.heatmap_group {
+		cursor: pointer;
+	}
+
+	.heatmap_group:hover .heatmap_button {
+		fill: #333;
+	}
+
+	.heatmap_button.selected,
+	.heatmap_group:hover .heatmap_button.selected {
+		fill: #444;
+	}
+
+	#heatmap {
+		position: absolute;
+	}
+
+	.country_groups.selected {
+		fill: #FFF568;
+		stroke: #CBC031
+	}
+
+	#country_list text, #heatmap text {
+		-moz-user-select: -moz-none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	svg text, h2 {
+		-moz-user-select: -moz-none;
+		-khtml-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		cursor: default;
+
+	}
+/*
+	#country_list, #heatmap {
+		-moz-cursor: default;
+		-khtml-cursor: default;
+		-webkit-cursor: default;
+		-ms-cursor: default;
+		cursor: default;
+	}
+*/
+	.heatmap_point {
+		fill: #777;
+	}
+	.heatmap_point_conflict {
+		fill: #d33;
+		stroke: #d33;
+	}
+
+	.country_filter_wrapper {
+		position: fixed;
+		background: #222;
+		z-index: 1;
+		padding: 10px;
+		height: 40px;
+		width: 460px;
+	}
+
+	.country_filter_wrapper input {
+		color: #ddd;
+		background-color: #444;
+		border-radius: 5px;
+		outline: none;
+		border: none;
+		padding: 10px;
+		visibility: hidden;
+
+	}
+
+	.country_groups {
+		fill: #58b;
+		stroke: #269;
+		stroke-width: 2.0;
+		opacity: 0.7;
+	}
+
+	#country_list {
+		position: absolute;
+		left: 0px;
+		top: 0px;	
+	}
+
+	#heatmap text {
+		
+		font-size: 10pt;
+	}
+
+	#orbitWidget {
+		position: absolute;
+		left: 160px;
+		top: 240px;
+	}
+
+	.country_list_wrapper {
+		position: absolute;
+		top: 60px;
+		height: 660px;
+		width: 480px;
+		overflow: auto;
+	}
+	.country_header, .language_header, .ethnic_header, .conflict_header {
+		position: absolute;
+		text-align: center;
+		font-family: 'Arial', sans-serif;
+		font-weight: bold;
+		font-size: 1.0em;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+	.language_header {
+		top: 210px;
+		left: 1145px;
+		width: 230px;
+		z-index: 1;
+	}
+	.ethnic_header {
+		top: 210px;
+		left: 635px;
+		width: 250px;
+		z-index: 1;	
+	}
+	.conflict_header {
+		position: absolute;
+		top: -5px;
+		left: 540px;
+		width: 960px;
+		z-index: 1;
+	}
+	.heatmap_wrapper {
+		position: absolute;
+		top: 30px;
+		left: 540px;
+		height: 180px;
+		width: 960px;
+		overflow: auto;
+	}
+	.country_header{
+		position: fixed;
+		text-align: left;
+		top: 0px;
+		left: 200px;
+		width: 400px;
+		z-index: 2;
+	}
+
+	.tooltip {
+		background-color: #fff;
+		font-size: 0.7em;
+		border-radius:5px;
+		pointer-events:none;
+		opacity: 0.7;
+		padding: 0px 10px;
+	}
+
+	#infotooltip {
+		background-color: #fff;
+		font-size: 0.7em;
+		border-radius:5px;
+		pointer-events:none;
+		opacity: 0.7;
+		width: 300px;
+		padding: 10px 10px;
+	}
+	</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<h2 class="country_header"></h2>
+<h2 class="conflict_header"></h2>
+<h2 class="language_header"></h2>
+<h2 class="ethnic_header"></h2>
+<div class="heatmap_wrapper">
+<svg id="heatmap"></svg>
+</div>
+<div class="country_filter_wrapper">
+<input class="country_filter" type="text" placeholder="Search countries...">
+</div>
+<div class="country_list_wrapper">
+<svg id="country_list"></svg>
+</div>
+<svg id="bubblesvg"></svg>
+<div id="orbitWidget">
+  <svg id="orbitDraw">
+  <defs>
+    <radialGradient id="gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color: rgb(187, 187, 187);" />
+      <stop offset="100%" stop-opacity="0%" style="stop-color: rgb(70, 70, 70);" />
+    </radialGradient>
+  </defs>
+  </svg>
+</div>
+<div id="nodeLabel"></div>
+<div style="width:1px;height:1px"><span id="measurer"></span></div>
+<script src="jquery-1.8.3.min.js"></script>
+<script src="smallalldata2.js"></script>
+<script src="message_hub.js"></script>
+<script src="database.js"></script>
+<script src="utils.js"></script>
+<script src="heatmap.js"></script>
+<script src="country_list.js"></script>
+<script src="orbit.js"></script>
+<script src="numeric.js"></script>
+<script src="distancesJSON.js"></script>
+<script src="bubbles.js"></script>
+<script src="tooltip.js"></script>
+<script>
+
+$(document).ready(function() {
+	infoTooltip = new Tooltip();
+	heatmap = new Heatmap(d3.select("#heatmap"), data);
+	countryList = new CountryList(d3.select("#country_list"), data);
+	messageHub = new MessageHub();
+	heatmap.setMessageHub(messageHub);
+	countryList.setMessageHub(messageHub);
+	orbit = new Orbit(data, messageHub);
+	messageHub.send("country", "Afghanistan");
+	messageHub.send("year", 2000)
+	bubbles = new Bubbles(d3.select("svg#bubblesvg"), countries, messageHub)
+	$(".country_filter").keyup(function() {
+		messageHub.send("filter", this.value);
+	})
+	messageHub.send("country", "Afghanistan")
+	messageHub.send("year", 2000)
+	messageHub.send("countrycode", "AF")
+	messageHub.send("group", "Pashtuns")
+
+	$(".country_header").text("Visualizing Ethnic Fractionalization, Conflicts and Power Relations");
+
+	$(".conflict_header").text("Conflict Timeline")
+		.on("mouseover", function(){ d3.select(this).style("color", "#ccc"); })
+		.on("click", function(d, i){ 
+			infoTooltip.elem.attr("id", "infotooltip").css("opacity", 0.9);
+			infoTooltip.show(" \u2022 The red regions on this timeline show when each ethnic group experienced episodes of ethnic conflict. <br><br> \u2022 Drag the vertical bar around to see how the ethnic power relations change over time!", 860, 30);
+		 })
+		.on("mouseout", function(){ d3.select(this).style("color", "#fff"); infoTooltip.hide(); });
+
+	$(".language_header").text("Language Groups")
+		.on("mouseover", function(){ d3.select(this).style("color", "#ccc"); })
+		.on("click", function(d, i){ 
+			infoTooltip.elem.attr("id", "infotooltip");
+			infoTooltip.show(" \u2022 The circles below represent languages spoken in this country. <br><br> \u2022 The bigger the circle, the more people speak the language. <br><br> \u2022 The distance between two circles indicates the level of difference between the languages.", 1100, 250);
+		 })
+		.on("mouseout", function(){ d3.select(this).style("color", "#fff"); infoTooltip.hide(); });
+
+	$(".ethnic_header").text("Ethnic Power Relations")
+		.on("mouseover", function(){ d3.select(this).style("color", "#ccc"); })
+		.on("click", function(d, i){ 
+			infoTooltip.elem.attr("id", "infotooltip");
+			infoTooltip.show(" \u2022 The circles below represent ethnic groups in this country. <br><br> \u2022 Circle size represents the number of people in the ethnic group. <br><br> \u2022 Groups closest to the center are those with the most political power. <br><br> \u2022 Groups colored red are in the midst of conflict.", 600, 250);
+		 })
+		.on("mouseout", function(){ d3.select(this).style("color", "#fff"); infoTooltip.hide(); });
+	$(".country_filter_wrapper input").css("visibility", "visible");
+	$('#loading').hide();
+})
+</script>
 </body>
 </html>
+

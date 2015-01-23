@@ -1,0 +1,40 @@
+body {
+  background-color: #464646;
+  font-family: Verdana, Arial;
+}
+
+#orbitDraw {
+  position: absolute;
+  top: 0px;
+  left: 360px;
+}
+
+#groupLabel, #groupDetails, #countryDetails {
+  visibility: hidden;
+  position: absolute;
+  background-color: #fff;
+  font-size: 0.7em;
+  top: 20px;
+}
+
+#groupLabel {
+  pointer-events:none;
+  opacity: 0.8;
+  padding: 0 10px;
+  min-width: 200px;
+  z-index: 2;
+  border-radius: 5px;
+}
+
+#groupDetails, #countryDetails {
+  padding: 5px;
+  opacity: 0.7;
+}
+
+#groupDetails p, #countryDetails p {
+  margin: 5px;
+}
+
+#groupDetails span, #groupLabel span, #countryDetails span {
+  font-weight: bold;
+}
