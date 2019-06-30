@@ -1,54 +1,172 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Bryan Hooi</title>
-<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
-<link href="style.css" rel="stylesheet" type="text/css"/>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
 
-<!-- Begin IE Fixes (Don't touch unless you know what you're doing!)-->
-	<!--[if IE]>
-	<link type="text/css" href="ie.css" rel="stylesheet" />
-	<![endif]-->
-<!-- End of IE fixes -->
+    <title>Bryan Hooi @ NUS</title>
 
-</head>
-<body>
-<div id="container">
-	<div id="navigation">
-		<ul>
-		<li><a href="index.html"><b>Home</b></a></li>
-		<li><a href="publications.html">Publications</a></li>
-		<li><a href="code.html">Code</a></li>
-		<li><a href="cv.pdf">CV</a></li>
-		</ul>
-	</div>
-		<div id="header">
-		  <h1>Bryan Hooi</h1>
-		</div>
-				<div id="wrapper">
-				<div id="content">
-					<h1>Hi!</h1>
-					<p>I'm a PhD student jointly in the Machine Learning Department and the Department of Statistics at Carnegie Mellon University. My research interests are in anomaly detection in graphs and time series. <br><br>
-					Contact: bhooi at andrew dot cmu dot edu.
-					</p>
-					<img src="photo.jpg" width="200" height="200" alt="" title="" />
-				</div>
-				</div>
-<!-- <div id="sidebar">
-	<h1>Another Sidebar</h1>
-	<p>Vestibulum nec urna ac elit hendrerit congue. Mauris et odio non odio congue viverra. Pellentesque at mi in lacus faucibus fermentum. Integer quis odio in lorem ornare laoreet. Aenean condimentum. Maecenas vitae lacus a est ultrices nonummy. Etiam sed sapien a mi feugiat egestas. Nam sed arcu sed arcu pretium interdum. Ut quis tellus. <a href="#">Class aptent taciti sociosqu ad litora torquent per conubia </a>nostra, per inceptos hymenaeos. Etiam quis nibh. Quisque sed risus. Integer lobortis eros eu dui. Aliquam et ante. Sed nulla diam, sagittis at, nonummy sed, lobortis et, elit. Morbi rhoncus viverra tortor. Sed posuere turpis vel orci. Vivamus euismod leo vitae lectus cursus sagittis. </p>
-</div>
-<div id="extra">
-	<h1>Extra Stuff </h1>
-	<p> Praesent erat tortor, eleifend ac, mattis vel, condimentum non, ipsum. Nam pretium ante a erat. Nam justo. In ultricies volutpat diam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed libero arcu, egestas pharetra, sagittis vitae, fringilla vitae, odio. Sed volutpat libero. Vivamus malesuada pretium dolor. Donec quis eros vel pede pretium ornare. Vivamus ac eros. Phasellus sodales lectus ut dolor luctus sollicitudin. Fusce volutpat dui ac leo. Morbi urna pede, consectetuer ornare, cursus cursus, porta vitae, mi. </p>
-</div> -->
-<div>
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
 
-	<div id="extra"><p>Design by <a href="http://smallpark.org">Smallpark Studios<!-- Thank you for keeping this on --></a></p></span> 
-	  
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="webpage.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#code">Code</a></li>
+              <li><a href="cv.pdf">CV</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div> <!-- /container -->
+
+    <br>
+    <div id="home">
+      <div id="content">
+        <p><img src="photo.jpg" width="200" height="200" align="left" style="margin: 0px 20px 20px 0px" border="1"></p>
+          <div class="name">Bryan Hooi</div>
+          <p class="details">
+          Assistant Professor<br>
+          School of Computing <br>
+          National University of Singapore
+          </p>
+        <p class="contact">
+        <b>E-mail:</b> bhooi@andrew.cmu.edu<br><br>
+        </p>
+
+        <p class="bio">I'm an Assistant Professor in School of Computing in National University of Singapore. My research interests include scalable machine learning, graph algorithms, anomaly detection, spatiotemporal data, and biomedical applications of AI. <br><br>
+
+        I received my Ph.D. in Machine Learning from Carnegie Mellon University, where I was advised by Christos Faloutsos. I received by M.S. in Computer Science and my B.S. in Mathematics from Stanford University.
+
+        </p>
+        
+      </div>
+    </div>
+
+    <!-- PUBLICATIONS -->
+    <hr>
+        <div id="publications">
+        <div id="content">
+          <div id="header">Publications</div>
+          <ol>
+            <h3>2019</h3>
+            <li> Bin Zhou, Shenghua Liu, <u>Bryan Hooi</u>, Xueqi Cheng, and Jing Ye. <a href=''> BeatGAN: Anomalous Rhythm Detection using Adversarially Generated Time Series</a>, <i>International Joint Conference on Artificial Intellince (IJCAI)</i> 2019. 
+            <li> Minji Yoon, <u>Bryan Hooi</u>, Kijung Shin and Christos Faloutsos. <a href=''> Fast and Accurate Anomaly Detection in Dynamic Graphs with a Two-Pronged Approach</a>, <i>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</i> 2019. 
+            <li> Marko Jereminov, <u>Bryan Hooi</u>, Amritanshu Pandey, Hyun Ah Song, Christos Faloutsos, and Larry Pileggi. <a href=''> Impact of Load Models on Power Flow Optimization</a>, <i>IEEE Power & Energy Society General Meeting (PES)</i> 2019. 
+            <li> <u>Bryan Hooi</u>, Kijung Shin, Shenghua Liu, and Christos Faloutsos. <a href='smf/paper.pdf'> SMF: Drift Aware Matrix Factorization with Seasonal Patterns</a>, <i> SIAM International Conference in Data Mining (SDM)</i>, 2019.
+            <li> <u>Bryan Hooi</u> and Christos Faloutsos. <a href='papers/bnb_sdm19.pdf'> Branch and Border: Partition-Based Change Detection in Multivariate Time Series</a>,  <i> SIAM International Conference in Data Mining (SDM)</i>, 2019.
+            <li> Wenjie Feng, Shenghua Liu, Christos Faloutsos, <u>Bryan Hooi</u>, Huawei Shen, Xueqi Cheng. <a href='papers/eaglemine_pakdd19.pdf'> Anomaly Detection in Large Graphs based on Vision-guided Summarization</a>, <i> Pacific-Asia Conference in Knowledge Discovery and Data Mining (PAKDD)</i>, 2019.
+
+            <h3>2018</h3>
+            <li> <u>Bryan Hooi</u>, Dhivya Eswaran, Amritanshu Pandey, Marko Jereminov, Larry Pileggi, and Christos Faloutsos. <a href='changedar/paper.pdf'> ChangeDAR: Online Localized Change Detection for Sensor Data on a Graph. </a><i> ACM International Conference on Information and Knowledge Management (CIKM),</i> 2018. 
+            <li> Shenghua Liu, <u>Bryan Hooi</u>, and Christos Faloutsos. <a href=''> A Contrast Metric for Fraud Detection in Rich Graphs</a>, <i>Transactions on Knowledge and Data Engineering (TKDE)</i> 2018.
+            <li> <u>Bryan Hooi</u>, Dhivya Eswaran, Hyun Ah Song, Amritanshu Pandey, Marko Jereminov, Larry Pileggi, and Christos Faloutsos <a href='papers/gridwatch_pkdd18.pdf'> GridWatch: Sensor Placement and Anomaly Detection in the Electrical Grid. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2018. <em class="award">Runner-up Best Student Data Mining Paper Award</em>
+            <li> Kijung Shin, Jisu Kim, <u>Bryan Hooi</u>, and Christos Faloutsos. <a href='http://www.cs.cmu.edu/~kijungs/papers/thinkdPKDD2018.pdf'> Think before You Discard: Accurate Triangle Counting in Graph Streams with Deletions. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2018. 
+            <li> Aastha Nigam, Kijung Shin, Ashwin Bahulkar, <u>Bryan Hooi</u>, David Hachen, Boleslaw K. Szymanski, Christos Faloutsos, Nitesh V. Chawla. <a href='https://www.cs.rpi.edu/~szymansk/papers/ECML-PKDD.pdf'> ONE-M: Modeling the Co-evolution of Opinions and Network Connections </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2018. 
+            <li> Wenjie Feng, Shenghua Liu, Christos Faloutsos, <u>Bryan Hooi</u>, Huawei Shen and Xueqi Cheng <a href='https://arxiv.org/pdf/1710.08756.pdf'> EagleMine: Vision-Guided Mining in Large Graphs. </a><i> KDD Outlier Detection De-constructed (ODD) Workshop </i> 2018. 
+            <li> Kijung Shin, <u>Bryan Hooi</u>, and Christos Faloutsos <a href='http://www.cs.cmu.edu/~kijungs/papers/mbizTKDD2018.pdf'> Fast, Accurate and Flexible Algorithms for Dense Subtensor Mining. </a><i> ACM Transactions on Knowledge Discovery from Data (TKDD) </i> 2018. 
+            <li> Pudi Chen, Shenghua Liu, Chuan Shi, <u>Bryan Hooi</u>, Bai Wang, Xueqi Cheng. <a href='https://www.ijcai.org/proceedings/2018/0460.pdf'> NeuCast: Seasonal Neural Forecast of Power Grid Time Series. </a><i> International Joint Conference on Artificial Intelligence (IJCAI), </i> 2018. 
+            <li> <u>Bryan Hooi</u>, Hyun Ah Song, Amritanshu Pandey, Marko Jereminov, Larry Pileggi, and Christos Faloutsos. <a href='papers/streamcast_sdm18.pdf'> StreamCast: Fast and Online Mining of Power Grid Time Sequences. </a><i> SIAM International Conference on Data Mining (SDM), </i> 2018. 
+            <li> Srijan Kumar, <u>Bryan Hooi</u>, Disha Makhija, Mohit Kumar, Christos Faloutsos, and V.S. Subrahmanian. <a href='https://cs.stanford.edu/~srijan/pubs/rev2-wsdm18.pdf'> REV2: Fraudulent User Prediction in Rating Platforms. </a><i> ACM International Conference on Web Search and Data Mining (WSDM) </i> 2018. 
+            <h3>2017</h3>
+            <li> Pedro Costa, Aurlio Campilho, <u>Bryan Hooi</u>, Asim Smailagic, Kris Kitani, Shenghua Liu, Christos Faloutsos and Adrian Galdran <a href='papers/eyequal_icmla17.pdf'> EyeQual: Accurate, Explainable, Retinal Image Quality Assessment. </a><i> 16th IEEE International Conference On Machine Learning and Applications </i> 2017. 
+            <li> Shenghua Liu, <u>Bryan Hooi</u>, and Christos Faloutsos <a href='https://arxiv.org/pdf/1705.02505.pdf'> Fraud Detection using Graph Topology and Temporal Spikes. </a><i> KDD Mining and Learning with Graphs (MLG) Workshop </i> 2017. 
+            <li> Shenghua Liu, <u>Bryan Hooi</u>, Christos Faloutsos. <a href='https://arxiv.org/pdf/1705.02505.pdf'> HoloScope: Topology-and-Spike Aware Fraud Detection. </a><i> ACM International Conference on Information and Knowledge Management (CIKM) </i> 2017. 
+            <li> Hemank Lamba, <u>Bryan Hooi</u>, Kijung Shin, Christos Faloutsos, and Jurgen Pfeffer. <a href='http://ecmlpkdd2017.ijs.si/papers/paperID251.pdf'> ZOORANK: Ranking Suspicious Entities in Time-Evolving Tensors. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2017. 
+            <li> <u>Bryan Hooi</u>, Shenghua Liu, Asim Smailagic, and Christos Faloutsos <a href='http://ecmlpkdd2017.ijs.si/papers/paperID288.pdf'> BEATLEX: Summarizing and Forecasting Time Series with Patterns. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2017. 
+            <li> Hyun Ah Song, <u>Bryan Hooi</u>, Marko Jereminov, Amritanshu Pandey, Larry Pileggi, and Christos Faloutsos <a href='http://ecmlpkdd2017.ijs.si/papers/paperID153.pdf'> PowerCast: Mining and Forecasting Power Grid Sequences. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) </i> 2017. 
+            <li> Chi Ling Chan, Justin Lai, <u>Bryan Hooi</u> and Todd Davies <a href='https://arxiv.org/pdf/1708.03472.pdf'> The Message or the Messenger? Inferring Virality and Diffusion Structure from Online Petition Signature Data. </a><i> Social Informatics (SocInfo) </i> 2017.
+            <li> Marko Jereminov, Amritanshu Pandey, Hyun Ah Song, <u>Bryan Hooi</u>, Larry Pileggi, and Christos Faloutsos. <a href=''> Linear Load Model for Robust Power System Analysis. </a><i> IEEE International Conference on Innovative Smart Grid Technologies (ISGT) </i> 2017.
+            <li> Kijung Shin, <u>Bryan Hooi</u>, Jisu Kim, and Christos Faloutsos. <a href='http://www.cs.cmu.edu/~kijungs/papers/alertKDD2017.pdf'> DenseAlert: Incremental Dense-Subtensor Detection in Tensor Streams. </a><i>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</i> 2017.
+            <li> <u>Bryan Hooi</u>, Kijung Shin, Hyun Ah Song, Alex Beutel, Neil Shah, and Christos Faloutsos. <a href='papers/graphfraud_tkdd2017.pdf'> Graph-Based Fraud Detection in the Face of Camouflage. </a><i> ACM Transactions on Knowledge Discovery from Data (TKDD), </i> 2017. 
+            <li> Tsubasa Takahashi, <u>Bryan Hooi</u>, and Christos Faloutsos. <a href='papers/autocyclone_www17.pdf'> AutoCyclone: Automatic Mining of Cyclic Patterns and Anomalies by Robust Tensor Factorization. </a><i> World Wide Web (WWW) Conference </i> 2017. 
+            <li> Kijung Shin, <u>Bryan Hooi</u>, Jisu Kim and Christos Faloutsos. <a href='http://www.cs.cmu.edu/~kijungs/papers/dcubeWSDM2017.pdf'> D-Cube: Dense-Block Detection in Terabyte-Scale Tensors. </a><i> ACM International Conference on Web Search and Data Mining (WSDM) </i> 2017.
+            <h3>2016</h3>
+            <li> Neil Shah, Alex Beutel, <u>Bryan Hooi</u>, Leman Akoglu, Stephan Gunnemann, Disha Makhija, Mohit Kumar, and Christos
+            Faloutsos. <a href=''> EdgeCentric: Anomaly Detection in Edge-Attributed Networks. </a><i> IEEE International Conference on Data Mining (ICDM) DMCS Workshop </i> 2016. 
+            <li> Kijung Shin, <u>Bryan Hooi</u>, and Christos Faloutsos. <a href='http://www.cs.cmu.edu/~kijungs/papers/mzoomPKDD2016.pdf'> M-Zoom: Fast Dense-Block Detection in Tensors with Quality Guarantees. </a><i> European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD)</i> 2016.
+            </li>
+            <li> <u>Bryan Hooi</u>, Hyun Ah Song, Alex Beutel, Neil Shah, Kijung Shin, and Christos Faloutsos. <a href='papers/fraudar_kdd16.pdf'> FRAUDAR: Bounding Graph Fraud in the Face of Camouflage. </a><i>ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD)</i> 2016. <em class="award">KDD Best Paper Award (Research Track)</em>
+            </li>
+            <li> Meng Jiang, Alex Beutel, Peng Cui, <u>Bryan Hooi</u>, Shiqiang Yang, and Christos Faloutsos. <a href='http://www.meng-jiang.com/pubs/crossspot-tkde16/crossspot-tkde16-paper.pdf'> Spotting Suspicious Behaviors in Multimodal Data: A General Metric and Algortihms. </a><i> IEEE Transactions on Knowledge and Data Engineering (TKDE) </i> 2016.
+            </li>
+            <li> Evangelos E. Papalexakis, <u>Bryan Hooi</u>, Konstantinos Pelechrinis, and Christos Faloutsos. <a href='http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0151027'> Power-Hop: A Pervasive Observation for Real Complex Networks. </a><i> PLoS ONE 11(3)</i> 2016. 
+            </li>
+            <li> <u>Bryan Hooi</u>, Neil Shah, Alex Beutel, Stephan Gunnemann, Leman Akoglu, Mohit Kumar, Disha Makhija, and Christos Faloutsos. <a href='papers/birdnest_sdm16.pdf'> BIRDNEST: Bayesian Inference for Ratings-Fraud Detection. </a><i> SIAM International Conference on Data Mining (SDM)</i> 2016.
+            </li>
+            <li> <u>Bryan Hooi</u>, Hyun Ah Song, Evangelos Papalexakis, Rakesh Agrawal, and Christos Faloutsos. <a href='http://www.cs.cmu.edu/~hyunahs/PAKDD2016.pdf'> Matrices, Compression, Learning Curves: formulation, and the GROUPNTEACH algorithms. </a><i>Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)</i> 2016.
+            <h3>2015</h3>
+            <li> <u>Bryan Hooi</u>, Hyun Ah Song, Evangelos Papalexakis, Rakesh Agrawal, and Christos Faloutsos. <a href=''> Education, Learning and Information Theory. </a><i> IEEE ICDM Workshop on Data Mining for Educational Assessment and Feedback </i> 2015. 
+            <li> Meng Jiang, Alex Beutel, Peng Cui, <u>Bryan Hooi</u>, Shiqiang Yang, and Christos Faloutsos. <a href='http://alexbeutel.com/papers/crossspot-icdm15-paper.pdf'> A General Suspiciousness Metric for Dense Blocks in Multimodal Data. </a><i> IEEE International Conference on Data Mining (ICDM) </i> 2015.
+            </ol>
+          </ul>
+        </div>
+        </div>
+<!-- CODE -->
+<hr>
+<div id="code">
+<div id="content">
+  <div id="header">Code</div>
+  <p>
+  <a href = "code/bnb.zip" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'BNB']);"> Branch and Border: Partition-Based Change Detection in Multivariate Time Series. </a> <br>
+  BNB (Branch and Border) is a nonparametric multivariate change detection method. BNB  approaches change detection by separating points before and after the change using an ensemble of random partitions.
+  <br><br>
+  <a href = "beatlex/index.html" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'BeatLex']);"> BeatLex: Summarizing and Forecasting Time Series with Patterns. </a> <br>
+  BeatLex is an algorithm that succintly summarizes and forecasts time series data. It is designed for data containing patterns that occur repeatedly, especially if these patterns are complex and nonlinear, change over time, and may distortions in their shape or length. 
+  <br><br>
+  <a href = "projects/fraudar/index.html" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'FRAUDAR']);"> FRAUDAR: Bounding Graph Fraud in the Face of Camouflage. </a> <br>
+  FRAUDAR is an algorithm for detecting graph fraud based on dense subgraph detection, which is aimed at being robust to camouflage (i.e. attackers which add false edges in order to mask their presence)
+  <br><br>
+  <a href = "code/birdnest.zip" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'BIRDNEST']);"> BIRDNEST: Bayesian Inference for Ratings-Fraud Detection </a> <br>
+  BIRDNEST is an algorithm for detecting fraudulent users in timestamped ratings data (e.g. users ratings products with 1 to 5 stars), based on detecting users that differ excessively from the norm, in terms of what ratings they give and the time distribution of their ratings.
+  <br><br>
+  <a href = "code/GNT.zip" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'GNT']);"> Matrices, Compression, Learning Curves: formulation, and the GROUPNTEACH algorithms. </a> <br>
+  GNT takes a collection of facts, arranged in a binary matrix, and reorders the rows and columns for the purpose of teaching and visualization.
+  <br><br>
+
+  </p>
 </div>
 </div>
-</body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
-
-<!-- Design by Smallpark.org. Released as open source. -->

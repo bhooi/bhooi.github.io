@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BeatLex</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link href="../style.css" rel="stylesheet" type="text/css"/>
+<style>
+/*	.navbar{ background-color:#999; color:#ffffff;}
+	.navbar a{color:#fff; }
+	.navbar a:hover, .navbar a:focus{background-color:#ddd !important; color:#fffff; }
+	.navblank{height:50px; }
+	.navbar .navbar-toggle>.icon-bar{background-color:#ffffff; }
+	.navbar .navbar-toggle:hover>.icon-bar{background-color:#ffffff; }
+	.title_box{background-color:#EF8823;}
+	.title_box h1{color: #fff; text-shadow: 1pt 1pt 1pt #000; font-size: 45px;}
+	.title_box .description{text-align:justify; color:white; text-shadow: 1px 1px 0px #000; font-size:13pt; }
+	.table>tbody>tr:nth-child(even){background-color:#FFF0C0; }
+	 table.table{border-top: 1px solid #eee; }
+	.table_scrollable{overflow:auto; }
+	h2{font-size: 25pt; color:#EF8823; padding-top: 80px; margin-top: -80px; }
+	@media screen and (min-width: 768px)
+	.title_box.jumbotron h1, .title_box.jumbotron .h1 {
+	font-size: 50px;
+	}
+	body {
+		  font-family:      Arial, Geneva, sans-serif;
+		  font-size:        medium;
+		  font-weight:      normal;
+	}
+	#emp {font-weight: bold;}*/
+</style>
+</head>
+<body>
+
+<a name="home"></a>
+<div id="container">
+	<div id="header">
+		<h1>BeatLex: Summarizing and Forecasting Time Series with Patterns</h1>
+	</div>
+</div>
+
+
+<div id="content">
+	<a name="overview"></a>
+	<h2>Overview </h2>
+	<b> BeatLex </b> is an algorithm that succintly summarizes and forecasts time series data. It is designed for data containing patterns that occur repeatedly, especially if these patterns are complex and nonlinear, change over time, and may distortions in their shape or length. <br />
+	<b> BeatLex </b> has the following properties: <br />
+	<ul>
+		<li> <i>Fast and online</i>: requires linear time in the data size, and bounded memory (it does not require the full history to process future data).  </li>
+		<li> <i>Effective</i>: it provides accurate pattern labels and forecasts. </li>
+		<li> <i>Principled and parameter-free</i>: it is fit using the Minimum Description Length principle of summarizing data by compressing it into as few bits as possible. </li>
+		<li> <i>General</i>: it applies to any type of time series data, and can use multidimensional (i.e. coevolving) time series. </li>
+	</ul>
+
+<!-- <center><img src="cj.pdf" alt="BeatLex" style="width:330px;height:330px;"></center> -->
+<!-- 	<br />		<a name="paper"></a>
+	<h2>Paper </h2>
+	<ul>
+		<li> 	
+				<a href=""><b>FRAUDAR: Bounding Graph Fraud in the Face of Camouflage</b></a>. <br/>
+				Bryan Hooi, Hyun Ah Song, Alex Beutel, Neil Shah, Kijung Shin, Christos Faloutsos. <br/>
+				Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining 2016, San Francisco, USA <br/>
+		</li>
+	</ul> -->
+	
+	<a name="code"></a>
+	<h2>Code</h2>
+	The source code and experiments used in the paper are available: <a href="http://www.andrew.cmu.edu/user/bhooi/code/beatlex.zip">[Download]</a>
+	<br /><br />
+
+	<a name="datasets"></a>
+	<h2>Datasets </h2>
+	The MITDB dataset used in the paper can be found at PhysioNet <a href="https://physionet.org/cgi-bin/atm/ATM?database=mitdb">https://physionet.org/cgi-bin/atm/ATM?database=mitdb</a>. <br /><br />
+	The MOCAP data can be found at <a href="http://mocap.cs.cmu.edu">http://mocap.cs.cmu.edu</a>. The preprocessed time series as used in our paper can be found in our source code package. <br /><br />
+	</div>
+</div>
+
+
+<div class="navblank">
+</div>
+<div class="navblank">
+</div>
+
+<script type="text/javascript" src="resources/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+</body>
+</html>

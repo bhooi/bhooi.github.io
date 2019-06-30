@@ -1,0 +1,49 @@
+StreamCast: Fast and Online Mining of Power Grid Time Sequences
+
+This software is licensed under Apache License, Version 2.0 (the  "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Version: 1.0
+Date: Oct 14, 2017
+Main Contact: Bryan Hooi (bhooi@andrew.cmu.edu)
+
+
+============ RUNNING STREAMCAST ON A TEST EXAMPLE ============
+
+The simplest way to run StreamCast is to run main.m in Matlab.
+(Make sure Matlab has its current directory set to the code directory of this package)
+
+This runs the StreamCast forecasting algorithm (etsbig_forecast) on either the CMU or LBNL dataset.
+
+The main function allows for toggling between the CMU and LBNL datasets by switching the 'dataset' variable to either 'CMU' or 'LBNL' accordingly.
+
+Note that the CMU dataset has hourly samples, so the period is 24, while the LBNL dataset has samples every 5 minutes, so the period is 288. 
+
+============ FUNCTIONS IN STREAMCAST ============
+
+The main function for use in StreamCast is etsbig_forecast. Its inputs are:
+
+Ir, Ii: input real and imaginary current time series
+Vr, Vi: input real and imaginary voltage time series
+temp: input temperature time series
+m: period (e.g. 24 for CMU dataset and 288 for LBNL dataset)
+pred_len: number of time steps to forecast
+alpha, beta, gamma: learning rate hyperparameters
+phi: damping factor (typically 1)
+lambda, lambda2: seasonal and overall regularization (typically 0)
+tempcoef: initialization point for temperature vector (typically [0 0 0 0 0])
+whatif_mod: used only for whatif experiments; typically set to []
+
+Its outputs are:
+
+Vr_fc, Vi_fc, Ir_fc, Ii_fc: forecasted voltage and current values
+Irhat, Iihat: fitted current values

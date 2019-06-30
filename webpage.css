@@ -1,0 +1,70 @@
+body {
+	font-family: Helvetica, sans-serif;
+	font-size: 13px;
+	margin-left: 20px;
+	margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+div#content {
+	width:700px;
+	margin-left: 20px;
+	margin-right: auto;
+	text-align:left
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+div#header{
+  padding-top: 60px;
+	font-size: 24px;
+	font-weight: bold;
+  padding-bottom: 10px;
+}
+
+div.name{
+  padding-top: 10px;
+	font-size: 36px;
+	font-weight: bold;
+  padding-bottom: 10px;
+}
+
+p.details{
+  padding-top: 8px;
+	font-size: 18px;
+	font-weight: bold;
+  padding-bottom: 8px;
+  color: #0081DD;
+}
+
+p.contact{
+  padding-top: 8px;
+	font-size: 14px;
+  padding-bottom: 8px;
+  color: #666666;
+}
+
+p.bio{
+  padding-top: 8px;
+	font-size: 14px;
+  padding-bottom: 8px;
+}
+
+div h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+div#container {
+}
+
+em.award {
+   color: #FF8100;
+   font-style: normal;
+	font-weight: bold;
+}

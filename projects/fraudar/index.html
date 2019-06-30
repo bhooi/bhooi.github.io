@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FRAUDAR</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link href="../../style.css" rel="stylesheet" type="text/css"/>
+<style>
+/*	.navbar{ background-color:#999; color:#ffffff;}
+	.navbar a{color:#fff; }
+	.navbar a:hover, .navbar a:focus{background-color:#ddd !important; color:#fffff; }
+	.navblank{height:50px; }
+	.navbar .navbar-toggle>.icon-bar{background-color:#ffffff; }
+	.navbar .navbar-toggle:hover>.icon-bar{background-color:#ffffff; }
+	.title_box{background-color:#EF8823;}
+	.title_box h1{color: #fff; text-shadow: 1pt 1pt 1pt #000; font-size: 45px;}
+	.title_box .description{text-align:justify; color:white; text-shadow: 1px 1px 0px #000; font-size:13pt; }
+	.table>tbody>tr:nth-child(even){background-color:#FFF0C0; }
+	 table.table{border-top: 1px solid #eee; }
+	.table_scrollable{overflow:auto; }
+	h2{font-size: 25pt; color:#EF8823; padding-top: 80px; margin-top: -80px; }
+	@media screen and (min-width: 768px)
+	.title_box.jumbotron h1, .title_box.jumbotron .h1 {
+	font-size: 50px;
+	}
+	body {
+		  font-family:      Arial, Geneva, sans-serif;
+		  font-size:        medium;
+		  font-weight:      normal;
+	}
+	#emp {font-weight: bold;}*/
+</style>
+</head>
+<body>
+
+<a name="home"></a>
+
+<div id="container">
+	<div id="header">
+		<h1>FRAUDAR: Bounding Graph Fraud in the Face of Camouflage</h1>
+	</div>
+</div>
+
+<div id="content">
+	<h2>Overview </h2>
+	<b> FRAUDAR </b> is an algorithm for catching fraudulent blocks in graph datasets (e.g. a review graph, Twitter follow graph, etc.) in a camouflage-resistant way.  <br />
+	<b> FRAUDAR </b> has the following properties: <br />
+	<ul>
+		<li> <i>Scalable</i>: scales near-linearly with input size </li>
+		<li> <i>Provably Accurate</i>: provides high accuracy in real data, with theoretical guarantees </li>
+		<li> <i>Camouflage-Resistant</i>: it is designed to minimize the ability of adversaries to evade detection</li>
+	</ul>
+	<h2>Paper </h2>
+	<ul>
+		<li> 	
+				<a href="http://www.andrew.cmu.edu/user/bhooi/papers/fraudar_kdd16.pdf"><b>FRAUDAR: Bounding Graph Fraud in the Face of Camouflage</b></a>. <br/>
+				Bryan Hooi, Hyun Ah Song, Alex Beutel, Neil Shah, Kijung Shin, Christos Faloutsos. <br/>
+				Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining 2016, San Francisco, USA <br/>
+		</li>
+	</ul>
+	
+	<br />
+	<h2>Code</h2>
+	The source codes used in the paper are available. <a href="http://www.andrew.cmu.edu/user/bhooi/code/camo.zip">[Download]</a>
+	<br /><br />
+
+	<h2>Datasets </h2>
+	The Amazon, Epinions and wiki-Vote datasets used in the paper can be found at <a href="https://snap.stanford.edu/data/">https://snap.stanford.edu/data/</a>. <br />
+	The TripAdvisor dataset can be found at <a href="http://times.cs.uiuc.edu/~wang296/Data/">http://times.cs.uiuc.edu/~wang296/Data/</a>. <br />
+	The Twitter dataset can be found at <a href="https://an.kaist.ac.kr/traces/WWW2010.html">https://an.kaist.ac.kr/traces/WWW2010.html</a>. <br />	</div>
+</div>
+
+<script type="text/javascript" src="resources/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+</body>
+</html>

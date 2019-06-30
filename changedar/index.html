@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ChangeDAR</title>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+<link href="../style.css" rel="stylesheet" type="text/css"/>
+<style>
+/*	.navbar{ background-color:#999; color:#ffffff;}
+	.navbar a{color:#fff; }
+	.navbar a:hover, .navbar a:focus{background-color:#ddd !important; color:#fffff; }
+	.navblank{height:50px; }
+	.navbar .navbar-toggle>.icon-bar{background-color:#ffffff; }
+	.navbar .navbar-toggle:hover>.icon-bar{background-color:#ffffff; }
+	.title_box{background-color:#EF8823;}
+	.title_box h1{color: #fff; text-shadow: 1pt 1pt 1pt #000; font-size: 45px;}
+	.title_box .description{text-align:justify; color:white; text-shadow: 1px 1px 0px #000; font-size:13pt; }
+	.table>tbody>tr:nth-child(even){background-color:#FFF0C0; }
+	 table.table{border-top: 1px solid #eee; }
+	.table_scrollable{overflow:auto; }
+	h2{font-size: 25pt; color:#EF8823; padding-top: 80px; margin-top: -80px; }
+	@media screen and (min-width: 768px)
+	.title_box.jumbotron h1, .title_box.jumbotron .h1 {
+	font-size: 50px;
+	}
+	body {
+		  font-family:      Arial, Geneva, sans-serif;
+		  font-size:        medium;
+		  font-weight:      normal;
+	}
+	#emp {font-weight: bold;}*/
+</style>
+</head>
+<body>
+
+<a name="home"></a>
+<div id="container">
+	<div id="header">
+		<h1>ChangeDAR: Online Localized Change Detection for Sensor Data on a Graph</h1>
+	</div>
+</div>
+
+
+<div id="content">
+	<a name="overview"></a>
+	<h2>Overview </h2>
+
+	How do we detect change points using sensors placed on a subset of the nodes or edges of a graph? This has applications to detecting electrical failures in a power grid setting, and detecting traffic accidents or other events in road traffic graphs. 
+
+	 <b> ChangeDAR </b> (Change Detection And Resolution) detects changes in an online manner, and reports when and where the change occurred in the graph. 
+
+	ChangeDAR has the following properties: <br/>
+	<ul>
+		<li> <i>Scalable</i>: it runs in near-linear time in the graph size and the number of time ticks.  </li>
+		<li> <i>Online</i>: it finds change points incrementally as new time ticks are received. </li>
+		<li> <i>Theoretical Guarantees</i>: it provides constant-factor approximation guarantees. </li>
+	</ul>
+
+
+	<br/><br/>
+<center><img src="traffic_ex.png" width=600></center>
+Detecting a traffic accident (red): the 3 time-series on the right show drops in average speed at 3 consecutive points on a highway. ChangeDAR outputs the time (red vertical lines) and location (red nodes) of the change, and we verify the accident against the traffic report by the California Highway Patrol (blue text at top-right)
+<!-- 	<br />		<a name="paper"></a>
+	<h2>Paper </h2>
+	<ul>
+		<li> 	
+				<a href=""><b>FRAUDAR: Bounding Graph Fraud in the Face of Camouflage</b></a>. <br/>
+				Bryan Hooi, Hyun Ah Song, Alex Beutel, Neil Shah, Kijung Shin, Christos Faloutsos. <br/>
+				Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining 2016, San Francisco, USA <br/>
+		</li>
+	</ul> -->
+	<a name="paper"></a>
+	<h2>Paper</h2>
+	The paper is at: <a href="paper.pdf">[Download]</a>. The supplementary document is at: <a href="supple.pdf">[Download]</a>
+	<br /><br />
+	
+	<a name="code"></a>
+	<h2>Code</h2>
+	The source code and experiments used in the paper are available: <a href="changedar.zip">[Download]</a>
+	<br /><br />
+
+	<a name="datasets"></a>
+	<h2>Datasets </h2>
+	The power grid graphs we used can be found in the Matpower package: <a href="http://www.pserc.cornell.edu/matpower/">http://www.pserc.cornell.edu/matpower/</a>. <br /><br />
+	The traffic data can be found at PEMS: <a href="http://pems.dot.ca.gov/">http://pems.dot.ca.gov/</a>. <br /><br />
+	</div>
+</div>
+
+
+<div class="navblank">
+</div>
+<div class="navblank">
+</div>
+
+<script type="text/javascript" src="resources/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+</body>
+</html>
