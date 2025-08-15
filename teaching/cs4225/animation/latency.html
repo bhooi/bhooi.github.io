@@ -175,6 +175,18 @@
     </div>
 
     <script>
+        // Preload the cat sound
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                window.catSound = new Audio('cat.m4a');
+                window.catSound.volume = 0.2;
+                window.catSound.load();
+                console.log("Audio system ready - please add cat.m4a to the same directory");
+            } catch (e) {
+                console.log("Audio setup failed:", e);
+            }
+        });
+
         class Kitten {
             constructor(x, y, vx, vy, size, color) {
                 this.x = x;
@@ -299,39 +311,38 @@
             }
 
             playBounceSound() {
-                // Create a simple beep sound using Web Audio API
+                // Play a cat sound WAV file
                 try {
-                    // Reuse audio context to prevent memory leaks
-                    if (!window.audioContext) {
-                        window.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    // Create an Audio element if it doesn't exist
+                    if (!window.catSound) {
+                        window.catSound = new Audio('cat.wav');
+                        // Set volume to be lower
+                        window.catSound.volume = 0.2;
                     }
                     
-                    const audioContext = window.audioContext;
-                    const oscillator = audioContext.createOscillator();
-                    const gainNode = audioContext.createGain();
-                    
-                    oscillator.connect(gainNode);
-                    gainNode.connect(audioContext.destination);
-                    
-                    oscillator.frequency.setValueAtTime(400 + Math.random() * 200, audioContext.currentTime);
-                    oscillator.type = 'sine';
-                    
-                    gainNode.gain.setValueAtTime(0.05, audioContext.currentTime); // Lower volume
-                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
-                    
-                    oscillator.start(audioContext.currentTime);
-                    oscillator.stop(audioContext.currentTime + 0.1);
-                    
-                    // Clean up after sound ends
-                    setTimeout(() => {
-                        try {
-                            oscillator.disconnect();
-                            gainNode.disconnect();
-                        } catch(e) {}
-                    }, 150);
-                    
+                    // If the sound is already playing, create a new audio element
+                    // This allows overlapping sounds for simultaneous collisions
+                    if (window.catSound.currentTime > 0 && !window.catSound.paused) {
+                        const tempSound = new Audio('cat.wav');
+                        tempSound.volume = 0.2;
+                        tempSound.play();
+                        
+                        // Clean up temporary audio after it finishes
+                        tempSound.onended = () => {
+                            tempSound.src = '';
+                            tempSound.remove();
+                        };
+                    } else {
+                        // Reset and play the main sound
+                        window.catSound.currentTime = 0;
+                        window.catSound.play().catch(e => {
+                            // Silently fail if play fails (e.g., user hasn't interacted with page)
+                            console.log("Note: Add cat.wav file to enable sound effects");
+                        });
+                    }
                 } catch (e) {
                     // Fallback: just do visual bounce if audio fails
+                    console.log("Sound playback failed:", e);
                 }
             }
 
@@ -457,15 +468,11 @@
                 this.counters = {};
                 this.spawnTimer = 0;
                 
-                // Clear any audio context references to prevent memory leaks
-                if (window.audioContext && window.audioContext.state !== 'closed') {
-                    try {
-                        window.audioContext.close().then(() => {
-                            window.audioContext = null;
-                        });
-                    } catch(e) {
-                        window.audioContext = null;
-                    }
+                // No need to clear audio context since we're using HTML5 Audio API
+                // But we should stop any currently playing sound
+                if (window.catSound) {
+                    window.catSound.pause();
+                    window.catSound.currentTime = 0;
                 }
             }
 
