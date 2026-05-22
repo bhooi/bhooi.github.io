@@ -27,6 +27,10 @@ div#header{
   padding-bottom: 10px;
 }
 
+div#publications + div#publications div#header {
+  padding-top: 25px;
+}
+
 div.name{
   padding-top: 10px;
 	font-size: 32px;
